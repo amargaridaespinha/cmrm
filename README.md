@@ -1,4 +1,4 @@
-# Assignment 2: Hello Kotlin. Hello Mobile Android World!
+# Assignment 1: Hello Kotlin. Hello Mobile Android World!
 
 Course: Engenharia Informática e de Computadores
 Student(s): Ana Espinha
