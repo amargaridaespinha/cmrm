@@ -1,6 +1,6 @@
 # Assignment 1: Hello Kotlin. Hello Mobile Android World!
 
-Course: Engenharia Informática e de Computadores
+Course: Computação Móvel
 Student(s): Ana Espinha
 Date: 20/03/2026
 Repository URL: https://github.com/amargaridaespinha/cmrm.git
