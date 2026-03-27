@@ -26,6 +26,7 @@ CM_TP1/
 ├─ AndroidStudio/
 │ ├─ HelloWorld/
 │ └─ SystemInfo/
+│ └─ Decide/
 ├─ Kotlin/
 │ ├─ exer1/
 │ ├─ exer2/
@@ -47,7 +48,8 @@ CM_TP1/
 
 - **Android Projects**:  
   - HelloWorld: basic app showing a text label.  
-  - SystemInfo: app displaying device info using UI components and activities.  
+  - SystemInfo: app displaying device info using UI components and activities.
+  - Decide: app assisting decision-making.
 
 ## 5. Testing and Validation
 - Kotlin: manually tested borrowing, returning, and searching books in Virtual Library.  
@@ -100,15 +102,72 @@ All AI-generated suggestions were manually reviewed to ensure correctness, compl
 - Learned Kotlin OOP concepts, Virtual Library implementation, and project structuring.  
 - Experienced difficulties with Android Studio and IntelliJ IDEA: the IDEs can be unintuitive at times, and occasional errors or glitches slowed down development.  
 - Learned to troubleshoot issues with IDEs, Git, and project configurations, improving problem-solving skills.
-- The AI-generated full application task could not be completed due to time constraints and complexity.
 
 ## 14. Future Improvements
 - Enhance Virtual Library with UI or database support.  
-- Expand Android apps with more functionality and improved UI.  
+- Expand Android apps with more functionality and improved UI.
+
+## 15. AI-Assisted Decision-Making App
+
+An AI-assisted project was developed to create a **Decision-Making Android app** using Kotlin, Android Studio, and Material Design 3. The app helps users decide what to eat, watch, or do and keeps a history of decisions.
+
+### 15.1 Features
+- **Single screen** (MainActivity) with buttons for categories:
+  - "O que comer?"
+  - "O que ver?"
+  - "O que fazer?"
+- **Decision logic** handled in a `DecisionViewModel`.
+- **Random selection** from predefined lists for each category.
+- **History tracking** using a RecyclerView in a separate `HistoryActivity`.
+- Clean and simple UI with animations for results display.
+
+### 15.2 Architecture
+- **MVVM pattern** (simple version) to separate UI and logic:
+  - `DecisionViewModel` holds categories, results, and history.
+  - `MainActivity` observes the ViewModel for category changes and decisions.
+  - `HistoryActivity` displays past decisions passed via Intent.
+- RecyclerView adapter for dynamic history display.
+
+### 15.3 Implementation Details
+- Kotlin `ViewModel` tracks:
+  - `_currentCategory`: currently selected category.
+  - `_result`: most recent decision.
+  - `_history`: list of past decisions.
+- MainActivity:
+  - Buttons change category and trigger decision.
+  - Animation used for fading in/out results.
+  - History button opens HistoryActivity with past decisions.
+- HistoryActivity:
+  - Receives decision history via Intent.
+  - Displays a list using RecyclerView.
+  - Shows placeholder text if no history is available.
+
+### 15.4 AI Contribution
+- AI suggested:
+  - Kotlin class structures (`ViewModel`, adapters).
+  - Android UI layout and Material Design usage.
+  - Correct handling of history sharing between activities.
+  - Debugging tips for crashes and common Android errors.
+- Human contribution:
+  - Integrated AI suggestions into working app.
+  - Fixed bugs related to history passing and decision logic.
+  - Tested app on emulator to ensure functionality.
+
+### 15.5 Known Issues and Improvements
+- Initial versions had all decisions defaulting to "Bacalhau" due to category mismatches.
+- History display initially broke because ViewModel instances were separate.
+- Improvements made:
+  - Corrected category keys in ViewModel.
+  - Passed history via Intent to maintain consistency between activities.
+  - Cleaned UI and animations.
+- Future improvements:
+  - Add database persistence for history.
+  - Allow user-defined decision options.
+  - Improve animations and Material Design components.  
 
 ---
 
-## 15. AI Usage Disclosure (Mandatory)
+## 16. AI Usage Disclosure (Mandatory)
 - **Tools**: ChatGPT.  
 - **Usage**: guided class design, project organization, and README drafting.  
 - **Responsibility**: all submitted code and documentation reviewed and verified by me.
